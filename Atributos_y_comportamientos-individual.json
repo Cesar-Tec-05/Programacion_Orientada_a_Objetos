@@ -1,0 +1,82 @@
+{
+  "Computadora": {
+    "Atributos": {
+      "1": "Procesador",
+      "2": "Memoria RAM",
+      "3": "Disco duro",
+      "4": "Pantalla",
+      "5": "Teclado"
+    },
+    "Comportamientos": {
+      "1": "Procesar información",
+      "2": "Ejecutar programas",
+      "3": "Almacenar datos",
+      "4": "Conectarse a internet",
+      "5": "Mostrar gráficos"
+    }
+  },
+  "Smartphone": {
+    "Atributos": {
+      "1": "Pantalla táctil",
+      "2": "Cámara",
+      "3": "Batería",
+      "4": "Memoria interna",
+      "5": "Sistema operativo"
+    },
+    "Comportamientos": {
+      "1": "Realizar llamadas",
+      "2": "Enviar mensajes",
+      "3": "Tomar fotos",
+      "4": "Navegar en internet",
+      "5": "Ejecutar aplicaciones"
+    }
+  },
+  "Automóvil": {
+    "Atributos": {
+      "1": "Motor",
+      "2": "Ruedas",
+      "3": "Volante",
+      "4": "Asientos",
+      "5": "Carrocería"
+    },
+    "Comportamientos": {
+      "1": "Transportar personas",
+      "2": "Encender",
+      "3": "Frenar",
+      "4": "Acelerar",
+      "5": "Tocar claxon"
+    }
+  },
+  "Avión": {
+    "Atributos": {
+      "1": "Alas",
+      "2": "Motores",
+      "3": "Cabina",
+      "4": "Tren de aterrizaje",
+      "5": "Fuselaje"
+    },
+    "Comportamientos": {
+      "1": "Despegar",
+      "2": "Aterrizar",
+      "3": "Volar",
+      "4": "Transportar pasajeros",
+      "5": "Planear"
+    }
+  },
+  "Smart House": {
+    "Atributos": {
+      "1": "Sensores",
+      "2": "Cámaras de seguridad",
+      "3": "Asistentes virtuales",
+      "4": "Iluminación inteligente",
+      "5": "Conexión WiFi"
+    },
+    "Comportamientos": {
+      "1": "Controlar dispositivos",
+      "2": "Ahorrar energía",
+      "3": "Monitorear seguridad",
+      "4": "Automatizar rutinas",
+      "5": "Gestionar accesos"
+    }
+  }
+}
