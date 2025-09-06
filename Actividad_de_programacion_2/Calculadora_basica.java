@@ -2,7 +2,7 @@
  * @author Cesar de Jesus Becerra Vera
  * @since 01 de Septiembre de 2025
  * @version 1.0
- * PROGRAMA: Main_ap2.java
+ * PROGRAMA: Calculadora_basica.java
  * CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
  * INGENIERIA EN COMPUTACION / 3ER SEMESTRE
  * PROFESOR: Sergio Franco Casillas
