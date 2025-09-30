@@ -1,0 +1,14 @@
+{
+    "java.project.sourcePaths": [
+        "Actividad_de_programación_7/Contador/src"
+    ],
+    "java.project.referencedLibraries": {
+        "include": [
+            "Actividad_de_programación_7/Contador/lib/contador-back.jar"
+        ],
+        "exclude": [
+            "Actividad_de_programación_7/Contador/lib/Back.jar"
+        ]
+    },
+    "java.format.settings.url": ".vscode/java-formatter.xml"
+}
