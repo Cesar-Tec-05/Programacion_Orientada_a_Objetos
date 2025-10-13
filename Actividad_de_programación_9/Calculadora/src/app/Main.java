@@ -48,7 +48,7 @@ public class Main extends JFrame implements ActionListener {
      * Inicializa los componentes de la interfaz gráfica. (Titulo, tamaño, colores, disposición, etc.)
      */
     private void initializeGUI() {
-        setTitle("Calculadora Científica");
+        setTitle("Calculadora Basica");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setBackground(DARK_BG);
