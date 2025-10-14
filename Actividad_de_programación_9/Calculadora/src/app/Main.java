@@ -2,13 +2,13 @@ package src.app; // PAQUETE: src.app
 
 /**
  * @author Cesar de Jesus Becerra Vera
- * @since 09 de Octubre de 2025
+ * @since 14 de Octubre de 2025
  * @version 2.0
  * PAQUETE: src.app
  * CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
  * INGENIERIA EN COMPUTACION / 3ER SEMESTRE
  * PROFESOR: Sergio Franco Casillas
- * DESCRIPCIÓN: Interfaz para la calculadora.
+ * DESCRIPCIÓN: Actividad de programación 9 - Calculadora básica
  */
 
 import javax.swing.*; // Importar librerías Swing para GUI
@@ -23,38 +23,38 @@ import src.app.Back_calculadora_basica; // Importar la lógica de la calculadora
 public class Main extends JFrame implements ActionListener {
     
     private Back_calculadora_basica calculadora; // Lógica de la calculadora
-    private JTextField display; // Campo de texto para mostrar resultados
+    private JTextField pantalla; // Campo de texto para mostrar resultados
     
     // Variables para los colores de la interfaz
-    private final Color DARK_BG = new Color(45, 45, 48);
-    private final Color DISPLAY_BG = new Color(32, 32, 35);
-    private final Color CLEAR_BUTTON = new Color(220, 53, 69);
-    private final Color FUNCTION_BUTTON = new Color(108, 117, 125);
-    private final Color NUMBER_BUTTON = new Color(73, 80, 87);
-    private final Color OPERATOR_BUTTON = new Color(255, 193, 7);
-    private final Color EQUALS_BUTTON = new Color(40, 167, 69);
-    private final Color TEXT_WHITE = Color.WHITE;
-    private final Color TEXT_BLACK = Color.BLACK;
+    private final Color FONDO_OSCURO = new Color(45, 45, 48);
+    private final Color FONDO_PANTALLA = new Color(32, 32, 35);
+    private final Color BOTON_LIMPIAR = new Color(220, 53, 69);
+    private final Color BOTON_FUNCION = new Color(108, 117, 125);
+    private final Color BOTON_NUMERO = new Color(73, 80, 87);
+    private final Color BOTON_OPERADOR = new Color(255, 193, 7);
+    private final Color BOTON_IGUAL = new Color(40, 167, 69);
+    private final Color TEXTO_BLANCO = Color.WHITE;
+    private final Color TEXTO_NEGRO = Color.BLACK;
     
     /**
      * Constructor que inicializa la interfaz gráfica.
      */
     public Main() {
         calculadora = new Back_calculadora_basica(); // Instancia de la lógica de la calculadora
-        initializeGUI();
+        inicializarInterfaz();
     }
     
     /**
      * Inicializa los componentes de la interfaz gráfica. (Titulo, tamaño, colores, disposición, etc.)
      */
-    private void initializeGUI() {
+    public void inicializarInterfaz() {
         setTitle("Calculadora Basica");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
-        getContentPane().setBackground(DARK_BG);
+        getContentPane().setBackground(FONDO_OSCURO);
         setLayout(new BorderLayout());
-        createDisplay();
-        createButtonPanel();
+        crearPantalla();
+        crearPanelBotones();
         pack();
         setLocationRelativeTo(null);
     }
@@ -62,83 +62,83 @@ public class Main extends JFrame implements ActionListener {
     /**
      * Crea el campo de texto para mostrar resultados. (Estilo, tamaño, color, alineación, etc.)
      */
-    private void createDisplay() {
-        display = new JTextField("0");
-        display.setFont(new Font("Arial", Font.BOLD, 28));
-        display.setHorizontalAlignment(JTextField.RIGHT);
-        display.setEditable(false);
-        display.setBackground(DISPLAY_BG);
-        display.setForeground(TEXT_WHITE);
-        display.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        display.setPreferredSize(new Dimension(350, 80));
-        add(display, BorderLayout.NORTH);
+    public void crearPantalla() {
+        pantalla = new JTextField("0");
+        pantalla.setFont(new Font("Arial", Font.BOLD, 28));
+        pantalla.setHorizontalAlignment(JTextField.RIGHT);
+        pantalla.setEditable(false);
+        pantalla.setBackground(FONDO_PANTALLA);
+        pantalla.setForeground(TEXTO_BLANCO);
+        pantalla.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        pantalla.setPreferredSize(new Dimension(350, 80));
+        add(pantalla, BorderLayout.NORTH);
     }
     
     /**
      * Crea el panel de botones con sus respectivos estilos y acciones. (Diseño, colores, tamaño, etc.)
      * Tabla de botones
      */
-    private void createButtonPanel() {
-        JPanel mainPanel = new JPanel(new GridLayout(4, 4, 3, 3));
-        mainPanel.setBackground(DARK_BG);
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    public void crearPanelBotones() {
+        JPanel panelPrincipal = new JPanel(new GridLayout(4, 4, 3, 3));
+        panelPrincipal.setBackground(FONDO_OSCURO);
+        panelPrincipal.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         
         // Fila 1: C, ±, 9, ÷
-        mainPanel.add(createButton("C", CLEAR_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("±", FUNCTION_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("9", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("÷", OPERATOR_BUTTON, TEXT_BLACK));
+        panelPrincipal.add(crearBoton("C", BOTON_LIMPIAR, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("±", BOTON_FUNCION, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("9", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("÷", BOTON_OPERADOR, TEXTO_NEGRO));
         
         // Fila 2: 7, 8, 6, ×
-        mainPanel.add(createButton("7", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("8", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("6", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("×", OPERATOR_BUTTON, TEXT_BLACK));
+        panelPrincipal.add(crearBoton("7", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("8", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("6", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("×", BOTON_OPERADOR, TEXTO_NEGRO));
         
         // Fila 3: 4, 5, 3, -
-        mainPanel.add(createButton("4", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("5", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("3", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("-", OPERATOR_BUTTON, TEXT_BLACK));
+        panelPrincipal.add(crearBoton("4", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("5", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("3", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("-", BOTON_OPERADOR, TEXTO_NEGRO));
         
         // Fila 4: 1, 2, 0, +
-        mainPanel.add(createButton("1", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("2", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("0", NUMBER_BUTTON, TEXT_WHITE));
-        mainPanel.add(createButton("+", OPERATOR_BUTTON, TEXT_BLACK));
+        panelPrincipal.add(crearBoton("1", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("2", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("0", BOTON_NUMERO, TEXTO_BLANCO));
+        panelPrincipal.add(crearBoton("+", BOTON_OPERADOR, TEXTO_NEGRO));
 
         // Agregar el panel principal a la ventana
-        add(mainPanel, BorderLayout.CENTER);
+        add(panelPrincipal, BorderLayout.CENTER);
 
         // Panel inferior para punto decimal e igual
-        JPanel bottomPanel = new JPanel(new GridLayout(1, 2, 3, 3));
-        bottomPanel.setBackground(DARK_BG);
-        bottomPanel.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
-        bottomPanel.add(createButton(".", NUMBER_BUTTON, TEXT_WHITE));
-        bottomPanel.add(createButton("=", EQUALS_BUTTON, TEXT_WHITE));
-        add(bottomPanel, BorderLayout.SOUTH);
+        JPanel panelInferior = new JPanel(new GridLayout(1, 2, 3, 3));
+        panelInferior.setBackground(FONDO_OSCURO);
+        panelInferior.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
+        panelInferior.add(crearBoton(".", BOTON_NUMERO, TEXTO_BLANCO));
+        panelInferior.add(crearBoton("=", BOTON_IGUAL, TEXTO_BLANCO));
+        add(panelInferior, BorderLayout.SOUTH);
     }
     
     /**
      * Crea un botón con estilo personalizado.
-     * @param text Texto del botón.
-     * @param bgColor Color de fondo del botón.
-     * @param textColor Color del texto del botón.
+     * @param texto Texto del botón.
+     * @param colorFondo Color de fondo del botón.
+     * @param colorTexto Color del texto del botón.
      * @return El botón creado.
      */
-    private JButton createButton(String text, Color bgColor, Color textColor) {
-        JButton button = new JButton(text);
-        button.setFont(new Font("Arial", Font.BOLD, 18));
-        button.setBackground(bgColor);
-        button.setForeground(textColor);
-        button.setFocusPainted(false);
-        button.setBorderPainted(false);
-        button.setPreferredSize(new Dimension(80, 60));
-        button.addActionListener(this);
+    public JButton crearBoton(String texto, Color colorFondo, Color colorTexto) {
+        JButton boton = new JButton(texto);
+        boton.setFont(new Font("Arial", Font.BOLD, 18));
+        boton.setBackground(colorFondo);
+        boton.setForeground(colorTexto);
+        boton.setFocusPainted(false);
+        boton.setBorderPainted(false);
+        boton.setPreferredSize(new Dimension(80, 60));
+        boton.addActionListener(this);
         
         // Efecto hover (es lo que hace que cambie de color al pasar el mouse)
-        button.addMouseListener(new java.awt.event.MouseAdapter() {
-            Color originalColor = bgColor;
+        boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            Color colorOriginal = colorFondo;
             
             /**
              * Efecto hover (es lo que hace que cambie de color al pasar el mouse)
@@ -146,7 +146,7 @@ public class Main extends JFrame implements ActionListener {
              */
             @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                button.setBackground(bgColor.brighter());
+                boton.setBackground(colorFondo.brighter());
             }
 
             /**
@@ -155,10 +155,10 @@ public class Main extends JFrame implements ActionListener {
              */
             @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                button.setBackground(originalColor);
+                boton.setBackground(colorOriginal);
             }
         });
-        return button;
+        return boton;
     }
     
     /**
@@ -167,80 +167,88 @@ public class Main extends JFrame implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        String command = e.getActionCommand();
+        String comando = e.getActionCommand();
         
         try { // Manejar las acciones según el botón presionado
-            switch (command) { // Dependiendo del botón presionado, llamar a la función correspondiente
+            switch (comando) { // Dependiendo del botón presionado, llamar a la función correspondiente
                 case "0": case "1": case "2": case "3": case "4":
                 case "5": case "6": case "7": case "8": case "9":
-                    calculadora.appendDigit(command); // Agregar dígito
+                    calculadora.agregarDigito(comando); // Agregar dígito
                     break;
                     
                 case ".": // Agregar punto decimal
-                    calculadora.appendDigit(".");
+                    calculadora.agregarDigito(".");
                     break;
                     
                 case "+": // Operación suma
-                    calculadora.setOperation("+");
+                    calculadora.establecerOperacion("+");
                     break;
                     
                 case "-": // Operación resta
-                    calculadora.setOperation("-");
+                    calculadora.establecerOperacion("-");
                     break;
                     
                 case "×": // Operación multiplicación
-                    calculadora.setOperation("*");
+                    calculadora.establecerOperacion("*");
                     break;
                     
                 case "÷": // Operación división
-                    calculadora.setOperation("/");
+                    calculadora.establecerOperacion("/");
                     break;
                     
                 case "=": // Calcular resultado
-                    calculadora.calculate();
+                    calculadora.calcular();
                     break;
                     
                 case "C": // Limpiar todo
-                    calculadora.clear();
+                    calculadora.limpiar();
                     break;
                     
                 case "±": // Cambiar signo
-                    calculadora.changeSign();
+                    calculadora.cambiarSigno();
                     break;
                     
                 default: // Si el comando no es reconocido, no hacer nada
                     return;
             }
             
-            updateDisplay(); // Actualizar el display después de cada acción
+            actualizarPantalla(); // Actualizar el display después de cada acción
             
         } catch (Exception ex) { // Manejar cualquier excepción inesperada
-            display.setText("Error");
-            display.setForeground(Color.RED);
+            pantalla.setText("Error");
+            pantalla.setForeground(Color.RED);
         }
     }
     
     /**
      * Actualiza el texto del display y su color según el estado de la calculadora.
      */
-    private void updateDisplay() {
-        String displayText = calculadora.getDisplayText();
-        display.setText(displayText);
+    public void actualizarPantalla() {
+        String textoMostrar;
         
-        if (calculadora.hasError()) { // Si hay un error, mostrar el texto en rojo
-            display.setForeground(Color.RED);
+        if (calculadora.tieneError()) {
+            textoMostrar = "Error";
+        } else {
+            // Usar el texto actual tal como está formateado en el backend
+            textoMostrar = calculadora.obtenerTextoActual();
+        }
+        
+        pantalla.setText(textoMostrar);
+        
+        if (calculadora.tieneError()) { // Si hay un error, mostrar el texto en rojo
+            pantalla.setForeground(Color.RED);
         } else { // Si no hay error, ajustar el color según el estado
-            if (calculadora.getCurrentOperation() != null && calculadora.isNewInput()) { // Si hay una operación pendiente, mostrar el texto en color más tenue
-                display.setForeground(new Color(200, 200, 200)); // Gris claro
+            if (calculadora.obtenerOperacionActual() != null && calculadora.esNuevaEntrada()) { // Si hay una operación pendiente, mostrar el texto en color más tenue
+                pantalla.setForeground(new Color(200, 200, 200)); // Gris claro
             } else { // Si no, mostrar en blanco
-                display.setForeground(TEXT_WHITE);
+                pantalla.setForeground(TEXTO_BLANCO);
             }
         }
         
-        if (displayText.length() > 10) { // Ajustar el tamaño de fuente si el texto es muy largo
-            display.setFont(new Font("Arial", Font.BOLD, 20));
+        if (textoMostrar.length() > 10) { // Ajustar el tamaño de fuente si el texto es muy largo
+            pantalla.setFont(new Font("Arial", Font.BOLD, 20));
         } else { // Si no, usar tamaño normal
-            display.setFont(new Font("Arial", Font.BOLD, 28));
+            pantalla.setFont(new Font("Arial", Font.BOLD, 28));
         }
     }
     
