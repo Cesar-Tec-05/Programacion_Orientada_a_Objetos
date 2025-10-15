@@ -1,4 +1,4 @@
-package src.app; // PAQUETE: src.app
+package lib; // PAQUETE: src.app
 
 /**
  * @author Cesar de Jesus Becerra Vera
