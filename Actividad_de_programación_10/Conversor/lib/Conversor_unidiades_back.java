@@ -9,7 +9,7 @@
  * DESCRIPCIÓN: Actividad de programación 10 - Conversor de sistemas numéricos: decimal, binario, octal y hexadecimal.
  */
 
-package src.app; // paquete de la clase
+package lib; // paquete de la clase
 
 /**
  * Clase para convertir números entre diferentes sistemas numéricos
