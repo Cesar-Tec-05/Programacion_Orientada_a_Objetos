@@ -1,16 +1,14 @@
 {
     "java.project.sourcePaths": [
-        "Actividad_de_programación_10/Conversor",
-        "Actividad_de_programación_7/Contador/src",
-        "Actividad_de_programación_8/Secuencia_de_collatz/src"
+        "Actividad_de_programación_11/Geometria"
     ],
     "java.project.referencedLibraries": {
         "include": [
             "/home/cesar/Escuela /Programacion/Programacion_Orientada_a_Objetos/Actividad_de_programación_9/Calculadora/lib/back_calculadora.jar",
             "/home/cesar/Escuela /Programacion/Programacion_Orientada_a_Objetos/Actividad_de_programación_8/Secuencia_de_collatz/lib/back-collatz.jar",
             "/home/cesar/Escuela /Programacion/Programacion_Orientada_a_Objetos/Actividad_de_programación_7/Contador/lib/contador-back.jar",
-            "/home/cesar/Escuela /Programacion/Programacion_Orientada_a_Objetos/Actividad_de_programación_8/Secuencia_de_collatz/lib/contador-back.jar",
-            "Actividad_de_programación_10/Conversor/lib/Conversor_unidiades_back.jar"
+            "/home/cesar/Escuela /Programacion/Programacion_Orientada_a_Objetos/Actividad_de_programación_10/Conversor/lib/Conversor_unidiades_back.jar",
+            "/home/cesar/Escuela /Programacion/Programacion_Orientada_a_Objetos/Actividad_de_programación_8/Secuencia_de_collatz/lib/contador-back.jar"
         ],
         "exclude": [
             "Actividad_de_programación_7/Contador/lib/Back.jar"
