@@ -22,3 +22,6 @@ replay_pid*
 
 # Temp files
 Temp
+
+# Production build folder
+dist
