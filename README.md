@@ -69,7 +69,7 @@ El proyecto incluye un script automatizado que compila y empaqueta todo:
 
 ```bash
 # 1. Navegar a la carpeta del proyecto
-cd "/home/cesar/Escuela /Programacion/Programacion_Orientada_a_Objetos/Proyecto_final/Proyecto"
+cd {RUTA_DEL_PROYECTO}
 
 # 2. Dar permisos de ejecución al script (solo la primera vez)
 chmod +x build-prod.sh
