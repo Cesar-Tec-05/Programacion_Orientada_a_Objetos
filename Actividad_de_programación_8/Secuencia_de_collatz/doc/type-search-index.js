@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"app","l":"Back_collatz"},{"p":"app","l":"Main"}];updateSearchResults();

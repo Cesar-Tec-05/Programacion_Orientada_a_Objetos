@@ -25,3 +25,6 @@ Temp
 
 # Production build folder
 dist
+
+# vs code settings
+.vscode/

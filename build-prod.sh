@@ -10,7 +10,7 @@ echo "=========================================="
 echo ""
 
 # Variables
-PROJECT_DIR="/home/cesar/Escuela /Programacion/Programacion_Orientada_a_Objetos/Proyecto_final/Proyecto"
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DIST_DIR="$PROJECT_DIR/dist"
 BUILD_DIR="$DIST_DIR/build"
 SRC_DIR="$PROJECT_DIR/src"

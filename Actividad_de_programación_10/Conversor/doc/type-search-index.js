@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"src.app","l":"Conversor_unidiades_back"},{"p":"src.app","l":"Main"}];updateSearchResults();
